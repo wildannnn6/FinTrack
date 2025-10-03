@@ -16,25 +16,18 @@ class SignupController extends Controller
 
     public function signup(Request $request)
     {
+        // Validasi input sederhana
         $request->validate([
             'username' => 'required',
-            'password' => [
-                'required',
-                'min:3',
-                'regex:/[A-Z]/'
-            ],
+            'password' => 'required|min:3',
         ]);
 
-        $username = $request->username;
-        $password = $request->password;
-
-        $no = "123456789";
-
-        if ($username === $no && $password === $no) {
-            return back()->with('success', 'Login berhasil!');
-        } else {
-            return back()->with('error', 'Username atau Password salah!');
+        if ($request->username === 'admin') {
+            return back()->with('error', 'Username ini sudah dipakai.');
         }
+
+        // Kalau lolos validasi
+        return redirect('/home')->with('success', 'Signup berhasil.');
     }
 
     /**
