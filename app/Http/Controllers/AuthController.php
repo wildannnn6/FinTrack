@@ -40,23 +40,9 @@ class AuthController extends Controller
         $password = $request->password;
 
         // Validasi terhadap data tetap
-        $errors = [];
-
-        if ($username !== $this->fixedData['username']) {
-            $errors['username'] = ['Username harus: ' . $this->fixedData['username']];
-        }
-        if ($email !== $this->fixedData['email']) {
-            $errors['email'] = ['Email harus: ' . $this->fixedData['email']];
-        }
-
-        if ($password !== $this->fixedData['password']) {
-            $errors['password'] = ['Password harus: ' . $this->fixedData['password']];
-        }
-
-        // Jika ada error validasi custom
-        if (!empty($errors)) {
+        if ($username !== $this->fixedData['username'] || $password !== $this->fixedData['password']) {
             return redirect()->route('login.index')
-                ->withErrors($errors)
+                ->withErrors(['login' => 'Akun tidak ditemukan, silahkan coba kembali'])
                 ->withInput();
         }
 
