@@ -8,8 +8,14 @@ class HomeController extends Controller
 {
     public function index()
     {
+        // Cek apakah user sudah login
+        if (!session('logged_in')) {
+            return redirect()->route('login.index')->with('error', 'Silakan login terlebih dahulu.');
+        }
+
         // Data dummy untuk demo
         $data = [
+            'username' => session('username'),
             'total_balance' => 12500000,
             'monthly_income' => 8500000,
             'monthly_expense' => 7250000,
