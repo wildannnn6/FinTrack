@@ -6,11 +6,11 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
-class DatabaseSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     public function run()
     {
-        // User admin
+        // Admin user
         User::create([
             'name' => 'Admin System',
             'email' => 'admin@fintrack.com',
@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
-        // User standard
+        // Standard users
         User::create([
             'name' => 'Budi Santoso',
             'email' => 'budi@email.com',
@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
-        // User advance
+        // Advance users
         User::create([
             'name' => 'Ahmad Rizki',
             'email' => 'ahmad@email.com',

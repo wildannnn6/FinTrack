@@ -86,6 +86,16 @@ Route::get('/admin/analytics', [AdminController::class, 'analytics'])->name('adm
 Route::get('/admin/reports', [AdminController::class, 'reports'])->name('admin.reports');
 Route::get('/admin/activity-logs', [AdminController::class, 'activityLogs'])->name('admin.activity-logs');
 
+// Admin User Management Routes
+Route::prefix('admin')->group(function () {
+    Route::get('/users', [AdminController::class, 'users'])->name('admin.users');
+    Route::get('/users/create', [AdminController::class, 'createUser'])->name('admin.users.create');
+    Route::post('/users/store', [AdminController::class, 'storeUser'])->name('admin.users.store');
+    Route::get('/users/edit/{id}', [AdminController::class, 'editUser'])->name('admin.users.edit');
+    Route::put('/users/update/{id}', [AdminController::class, 'updateUser'])->name('admin.users.update');
+    Route::delete('/users/delete/{id}', [AdminController::class, 'deleteUser'])->name('admin.users.delete');
+});
+
 // Logout
 Route::post('/logout', function () {
     session()->flush();
