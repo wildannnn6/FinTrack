@@ -95,12 +95,8 @@
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
                             <button class="text-blue-600 hover:text-blue-900">Edit</button>
-                            <button class="text-green-600 hover:text-green-900">View</button>
-                            @if($user['status'] === 'active')
-                                <button class="text-red-600 hover:text-red-900">Suspend</button>
-                            @else
-                                <button class="text-green-600 hover:text-green-900">Activate</button>
-                            @endif
+                            <button class="text-red-600 hover:text-red-900">Delete</button>
+                        
                         </td>
                     </tr>
                     @endforeach

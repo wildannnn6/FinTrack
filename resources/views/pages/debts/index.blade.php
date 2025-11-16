@@ -23,28 +23,19 @@
         <div class="bg-gray-800 rounded-2xl p-6 card-shadow border border-gray-700">
             <h3 class="text-gray-400 text-sm font-medium">Total Piutang</h3>
             <p class="text-2xl font-bold text-green-400 mt-2">
-                Rp {{ number_format(array_sum(array_column(array_filter($debts, function($debt) { 
-                    return $debt['type'] === 'piutang'; 
-                }), 'amount')), 0, ',', '.') }}
+                Rp {{ number_format($totalPiutang, 0, ',', '.') }}
             </p>
         </div>
         <div class="bg-gray-800 rounded-2xl p-6 card-shadow border border-gray-700">
             <h3 class="text-gray-400 text-sm font-medium">Total Hutang</h3>
             <p class="text-2xl font-bold text-red-400 mt-2">
-                Rp {{ number_format(array_sum(array_column(array_filter($debts, function($debt) { 
-                    return $debt['type'] === 'hutang'; 
-                }), 'amount')), 0, ',', '.') }}
+                Rp {{ number_format($totalHutang, 0, ',', '.') }}
             </p>
         </div>
         <div class="bg-gray-800 rounded-2xl p-6 card-shadow border border-gray-700">
             <h3 class="text-gray-400 text-sm font-medium">Net Position</h3>
-            <p class="text-2xl font-bold 
-                {{ (array_sum(array_column(array_filter($debts, function($debt) { return $debt['type'] === 'piutang'; }), 'amount')) - 
-                   array_sum(array_column(array_filter($debts, function($debt) { return $debt['type'] === 'hutang'; }), 'amount')) >= 0 ? 'text-green-400' : 'text-red-400' }} mt-2">
-                Rp {{ number_format(
-                    array_sum(array_column(array_filter($debts, function($debt) { return $debt['type'] === 'piutang'; }), 'amount')) - 
-                    array_sum(array_column(array_filter($debts, function($debt) { return $debt['type'] === 'hutang'; }), 'amount')), 
-                0, ',', '.') }}
+            <p class="text-2xl font-bold {{ $netPosition >= 0 ? 'text-green-400' : 'text-red-400' }} mt-2">
+                Rp {{ number_format($netPosition, 0, ',', '.') }}
             </p>
         </div>
     </div>
