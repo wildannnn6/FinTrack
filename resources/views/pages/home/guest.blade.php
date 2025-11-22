@@ -1,6 +1,6 @@
-@extends('layouts.standard')
+@extends('layouts.guest')
 
-@section('title', 'Dashboard Standard - Fintrack')
+@section('title', 'Home Guest - Fintrack')
 
 @section('content')
 <div class="container mx-auto px-4 py-8">

@@ -33,7 +33,7 @@
             <div class="flex justify-between items-center py-4">
                 <!-- Logo & Main Navigation -->
                 <div class="flex items-center space-x-8">
-                    <h1 class="text-2xl font-bold">Fintrack</h1>
+                    <h1 class="text-2xl font-bold">Fintrack <span class="text-pink-200">Standard</span></h1>
                     <div class="hidden md:flex space-x-6">
                         <!-- Dashboard Link -->
                         <a href="{{ session('user_type') === 'standard' ? route('home.standard') : route('home.advance') }}"
