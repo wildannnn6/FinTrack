@@ -11,7 +11,7 @@
         </div>
 
         <div class="bg-gray-800 rounded-2xl p-6 card-shadow border border-gray-700">
-            <form action="{{ route('investments.store') }}" method="POST">
+            <form action="{{ route('advance.investments.store') }}" method="POST"> <!-- PERBAIKAN DI SINI -->
                 @csrf
                 
                 <div class="grid gap-6">
@@ -73,7 +73,7 @@
 
                 <!-- Action Buttons -->
                 <div class="flex justify-end space-x-4 mt-8 pt-6 border-t border-gray-700">
-                    <a href="{{ route('investments.index') }}" 
+                    <a href="{{ route('advance.investments.index') }}" 
                        class="px-6 py-3 border border-gray-600 text-gray-300 rounded-lg font-semibold hover:bg-gray-700 transition">
                         Batal
                     </a>

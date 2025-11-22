@@ -32,7 +32,7 @@ class InvestmentController extends Controller
             return redirect()->route('login.index')->with('error', 'Akses ditolak.');
         }
 
-        return view('pages.investments.index', ['investments' => $this->investments]);
+        return view('pages.advance.investments.index', ['investments' => $this->investments]);
     }
 
     public function create()
@@ -41,7 +41,7 @@ class InvestmentController extends Controller
             return redirect()->route('login.index')->with('error', 'Akses ditolak.');
         }
 
-        return view('pages.investments.create', ['types' => $this->getInvestmentTypes()]);
+        return view('pages.advance.investments.create', ['types' => $this->getInvestmentTypes()]);
     }
 
     public function store(Request $request)
@@ -74,7 +74,7 @@ class InvestmentController extends Controller
 
         $this->investments[] = $investment;
 
-        return redirect()->route('investments.index')->with('success', 'Investasi berhasil ditambahkan!');
+        return redirect()->route('advance.investments.index')->with('success', 'Investasi berhasil ditambahkan!');
     }
 
     private function getInvestmentTypes()

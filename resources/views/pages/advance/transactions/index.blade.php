@@ -6,7 +6,7 @@
 <div class="container mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-3xl font-bold text-white">Manajemen Transaksi</h1>
-        <a href="{{ route('transactions.create') }}" 
+        <a href="{{ route('advance.transactions.create') }}" 
            class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition">
             + Tambah Transaksi
         </a>

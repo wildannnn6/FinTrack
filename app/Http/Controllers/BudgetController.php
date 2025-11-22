@@ -30,7 +30,7 @@ class BudgetController extends Controller
             return redirect()->route('login.index')->with('error', 'Akses ditolak.');
         }
 
-        return view('pages.budgets.index', ['budgets' => $this->budgets]);
+        return view('pages.advance.budgets.index', ['budgets' => $this->budgets]);
     }
 
     public function create()
@@ -39,7 +39,7 @@ class BudgetController extends Controller
             return redirect()->route('login.index')->with('error', 'Akses ditolak.');
         }
 
-        return view('pages.budgets.create', ['categories' => $this->getCategories()]);
+        return view('pages.advance.budgets.create', ['categories' => $this->getCategories()]);
     }
 
     public function store(Request $request)
@@ -66,7 +66,7 @@ class BudgetController extends Controller
 
         $this->budgets[] = $budget;
 
-        return redirect()->route('budgets.index')->with('success', 'Budget berhasil ditambahkan!');
+        return redirect()->route('advance.budgets.index')->with('success', 'Budget berhasil ditambahkan!');
     }
 
     private function getCategories()

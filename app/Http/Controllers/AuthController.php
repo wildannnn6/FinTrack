@@ -9,14 +9,14 @@ class AuthController extends Controller
     private $users = [
         'standard' => [
             'email' => 'standard@gmail.com',
-            'username' => 'standard123', 
+            'username' => 'standard123',
             'password' => 'Standard123',
             'type' => 'standard',
         ],
         'advance' => [
             'email' => 'advance@gmail.com',
             'username' => 'advance123',
-            'password' => 'Advance123', 
+            'password' => 'Advance123',
             'type' => 'advance',
         ],
         'admin' => [
@@ -71,7 +71,7 @@ class AuthController extends Controller
 
         foreach ($this->users as $type => $user) {
             if ($username === $user['username'] &&
-                $email === $user['email'] && 
+                $email === $user['email'] &&
                 $password === $user['password']) {
                 $userType = $type;
                 $userData = $user;
@@ -82,7 +82,7 @@ class AuthController extends Controller
         if (!$userType) {
             $validUsernames = implode(', ', array_column($this->users, 'username'));
             $validEmails = implode(', ', array_column($this->users, 'email'));
-            
+
             if (!in_array($username, array_column($this->users, 'username'))) {
                 $errors['username'] = ['Username harus: ' . $validUsernames];
             }

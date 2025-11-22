@@ -6,7 +6,7 @@
 <div class="container mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-3xl font-bold text-white">Portfolio Investasi</h1>
-        <a href="{{ route('investments.create') }}" 
+        <a href="{{ route('advance.investments.create') }}" 
            class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition">
             + Tambah Investasi
         </a>

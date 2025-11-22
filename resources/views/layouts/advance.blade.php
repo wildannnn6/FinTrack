@@ -42,23 +42,19 @@
                            class="hover:text-pink-200 transition {{ request()->routeIs('home.advance') ? 'text-pink-200 font-semibold border-b-2 border-pink-200' : '' }}">
                             Dashboard
                         </a>
-                        <a href="{{ route('transactions.index') }}" 
-                           class="hover:text-pink-200 transition {{ request()->routeIs('transactions.*') ? 'text-pink-200 font-semibold border-b-2 border-pink-200' : '' }}">
-                            Transaksi
-                        </a>
-                        <a href="{{ route('budgets.index') }}" 
+                        <a href="{{ route('advance.budgets.index') }}" 
                            class="hover:text-pink-200 transition {{ request()->routeIs('budgets.*') ? 'text-pink-200 font-semibold border-b-2 border-pink-200' : '' }}">
                             Anggaran
                         </a>
-                        <a href="{{ route('investments.index') }}" 
+                        <a href="{{ route('advance.investments.index') }}" 
                            class="hover:text-pink-200 transition {{ request()->routeIs('investments.*') ? 'text-pink-200 font-semibold border-b-2 border-pink-200' : '' }}">
                             Investasi
                         </a>
-                        <a href="{{ route('debts.index') }}" 
+                        <a href="{{ route('advance.debts.index') }}" 
                            class="hover:text-pink-200 transition {{ request()->routeIs('debts.*') ? 'text-pink-200 font-semibold border-b-2 border-pink-200' : '' }}">
                             Hutang & Piutang
                         </a>
-                        <a href="{{ route('reports.index') }}" 
+                        <a href="{{ route('advance.reports.index') }}" 
                            class="hover:text-pink-200 transition {{ request()->routeIs('reports.*') ? 'text-pink-200 font-semibold border-b-2 border-pink-200' : '' }}">
                             Laporan
                         </a>

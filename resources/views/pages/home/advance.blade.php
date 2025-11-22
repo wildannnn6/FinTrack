@@ -137,21 +137,21 @@
         </div>
     </div>
 
-    <!-- Quick Actions -->
+    <!-- Quick Actions - PERBAIKAN ROUTE DI SINI -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <a href="{{ route('transactions.index') }}" class="bg-purple-600 hover:bg-purple-700 p-4 rounded-lg text-center transition">
             <div class="text-2xl mb-2">💰</div>
             <p class="font-semibold">Transaksi</p>
         </a>
-        <a href="{{ route('budgets.index') }}" class="bg-pink-600 hover:bg-pink-700 p-4 rounded-lg text-center transition">
+        <a href="{{ route('advance.budgets.index') }}" class="bg-pink-600 hover:bg-pink-700 p-4 rounded-lg text-center transition">
             <div class="text-2xl mb-2">📊</div>
             <p class="font-semibold">Anggaran</p>
         </a>
-        <a href="{{ route('reports.index') }}" class="bg-blue-600 hover:bg-blue-700 p-4 rounded-lg text-center transition">
+        <a href="{{ route('advance.reports.index') }}" class="bg-blue-600 hover:bg-blue-700 p-4 rounded-lg text-center transition">
             <div class="text-2xl mb-2">📈</div>
             <p class="font-semibold">Laporan</p>
         </a>
-        <a href="{{ route('cashflow') }}" class="bg-green-600 hover:bg-green-700 p-4 rounded-lg text-center transition">
+        <a href="{{ route('advance.reports.cashflow') }}" class="bg-green-600 hover:bg-green-700 p-4 rounded-lg text-center transition">
             <div class="text-2xl mb-2">💸</div>
             <p class="font-semibold">Cash Flow</p>
         </a>
