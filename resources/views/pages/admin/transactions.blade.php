@@ -50,7 +50,6 @@
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
@@ -73,7 +72,7 @@
                                 </span>
                             @endif
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium 
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium
                             {{ $transaction['type'] === 'income' ? 'text-green-600' : 'text-red-600' }}">
                             Rp {{ number_format($transaction['amount'], 0, ',', '.') }}
                         </td>
@@ -82,10 +81,6 @@
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                             {{ $transaction['date'] }}
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <button class="text-blue-600 hover:text-blue-900 mr-3">View</button>
-                            <button class="text-red-600 hover:text-red-900">Delete</button>
                         </td>
                     </tr>
                     @endforeach
