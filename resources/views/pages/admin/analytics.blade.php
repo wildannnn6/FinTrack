@@ -25,7 +25,7 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            
+
 
             <div class="bg-white rounded-2xl card-shadow p-6">
                 <h2 class="text-xl font-bold text-gray-800 mb-6">Revenue Trend</h2>
@@ -77,7 +77,7 @@
 
 
 
-        // Revenue Trend Chart
+      
         const revenueCtx = document.getElementById('revenueTrendChart').getContext('2d');
         const revenueChart = new Chart(revenueCtx, {
             type: 'bar',
