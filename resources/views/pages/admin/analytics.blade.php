@@ -6,7 +6,7 @@
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-3xl font-bold text-gray-800 mb-8">System Analytics</h1>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <div class="bg-white rounded-2xl card-shadow p-6">
                 <h3 class="text-gray-500 text-sm font-medium">Active Users</h3>
                 <p class="text-3xl font-bold text-gray-800">142</p>
@@ -14,12 +14,12 @@
             </div>
             <div class="bg-white rounded-2xl card-shadow p-6">
                 <h3 class="text-gray-500 text-sm font-medium">Monthly Revenue</h3>
-                <p class="text-3xl font-bold text-gray-800">Rp 18.5M</p>
+                <p class="text-3xl font-bold text-gray-800">Rp 18.500.000</p>
                 <p class="text-green-500 text-sm mt-2">+8% from last month</p>
             </div>
             <div class="bg-white rounded-2xl card-shadow p-6">
                 <h3 class="text-gray-500 text-sm font-medium">Conversion Rate</h3>
-                <p class="text-3xl font-bold text-gray-800">4.2%</p>
+                <p class="text-3xl font-bold text-gray-800">4.20%</p>
                 <p class="text-green-500 text-sm mt-2">+0.3% from last month</p>
             </div>
         </div>
@@ -77,7 +77,7 @@
 
 
 
-      
+
         const revenueCtx = document.getElementById('revenueTrendChart').getContext('2d');
         const revenueChart = new Chart(revenueCtx, {
             type: 'bar',

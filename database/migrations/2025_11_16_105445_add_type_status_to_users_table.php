@@ -6,26 +6,30 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
     {
-        // Cek jika kolom belum ada, lalu tambahkan
-        if (!Schema::hasColumn('users', 'type')) {
+        if (Schema::hasTable('users') && !Schema::hasColumn('users', 'type')) {
             Schema::table('users', function (Blueprint $table) {
-                $table->enum('type', ['standard', 'advance', 'admin'])->default('standard')->after('password');
-            });
-        }
 
-        if (!Schema::hasColumn('users', 'status')) {
-            Schema::table('users', function (Blueprint $table) {
-                $table->enum('status', ['active', 'inactive'])->default('active')->after('type');
+                $table->string('type')->default('standard')->after('email');
+
+                $table->string('status')->default('active')->after('type');
             });
         }
     }
 
-    public function down()
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['type', 'status']);
-        });
+        if (Schema::hasTable('users') && (Schema::hasColumn('users', 'type') || Schema::hasColumn('users', 'status'))) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->dropColumn(['type', 'status']);
+            });
+        }
     }
 };
