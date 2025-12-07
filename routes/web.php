@@ -12,6 +12,7 @@ use App\Http\Controllers\InvestmentController;
 use App\Http\Controllers\DebtController;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\GoogleController;
 
 // Auth Routes
 Route::get('/signup', [SignupController::class, 'index'])->name('signup.index');
@@ -174,3 +175,8 @@ Route::post('/logout', function () {
     session()->flush();
     return redirect()->route('home.guest')->with('success', 'Logout berhasil!');
 })->name('logout');
+
+Route::controller(GoogleController::class)->group(function() {
+    Route::get('auth/google', 'redirectToGoogle')->name('auth.google');
+    Route::get('auth/google/callback', 'handleGoogleCallback');
+});
