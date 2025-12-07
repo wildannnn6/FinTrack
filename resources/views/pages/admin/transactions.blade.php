@@ -18,27 +18,25 @@
         </div>
     </div>
 
-    <!-- Transaction Stats -->
     <div class="grid md:grid-cols-4 gap-6 mb-8">
         <div class="bg-white rounded-2xl card-shadow p-6">
             <h3 class="text-gray-500 text-sm font-medium">Total Transactions</h3>
-            <p class="text-3xl font-bold text-gray-800">1,250</p>
+            <p class="text-3xl font-bold text-gray-800">{{ number_format($transactionStats['total_transactions'], 0, ',', '.') }}</p>
         </div>
         <div class="bg-white rounded-2xl card-shadow p-6">
             <h3 class="text-gray-500 text-sm font-medium">Total Income</h3>
-            <p class="text-3xl font-bold text-green-600">Rp 185M</p>
+            <p class="text-3xl font-bold text-green-600">Rp {{ number_format($transactionStats['total_income'], 0, ',', '.') }}</p>
         </div>
         <div class="bg-white rounded-2xl card-shadow p-6">
             <h3 class="text-gray-500 text-sm font-medium">Total Expense</h3>
-            <p class="text-3xl font-bold text-red-600">Rp 159M</p>
+            <p class="text-3xl font-bold text-red-600">Rp {{ number_format($transactionStats['total_expense'], 0, ',', '.') }}</p>
         </div>
         <div class="bg-white rounded-2xl card-shadow p-6">
             <h3 class="text-gray-500 text-sm font-medium">Avg Transaction</h3>
-            <p class="text-3xl font-bold text-blue-600">Rp 275K</p>
+            <p class="text-3xl font-bold text-blue-600">Rp {{ number_format($transactionStats['avg_transaction'], 0, ',', '.') }}</p>
         </div>
     </div>
 
-    <!-- Transactions Table -->
     <div class="bg-white rounded-2xl card-shadow overflow-hidden">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200">
@@ -53,13 +51,13 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach($transactions as $transaction)
+                    @forelse($transactions as $transaction)
                     <tr class="hover:bg-gray-50">
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                             #{{ $transaction['id'] }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                            {{ $transaction['user'] }}
+                            {{ $transaction['user'] }} 
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             @if($transaction['type'] === 'income')
@@ -83,7 +81,13 @@
                             {{ $transaction['date'] }}
                         </td>
                     </tr>
-                    @endforeach
+                    @empty
+                    <tr>
+                        <td colspan="6" class="px-6 py-4 text-center text-sm text-gray-500">
+                            No transactions found.
+                        </td>
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>

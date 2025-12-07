@@ -165,8 +165,8 @@ Route::middleware(['auth.custom'])->group(function () {
         Route::get('/transactions', [AdminController::class, 'transactions'])->name('admin.transactions');
         Route::get('/analytics', [AdminController::class, 'analytics'])->name('admin.analytics');
         Route::get('/reports', [AdminController::class, 'reports'])->name('admin.reports');
-        Route::get('/activity-logs', [AdminController::class, 'activityLogs'])->name('admin.activity-logs');
-    });
+        Route::get('/activity-logs', [AdminController::class, 'activityLogs'])->name('admin.activity-logs');    });
+        Route::post('/reports/generate', [AdminController::class, 'generateReport'])->name('admin.generateReport');
 });
 
 // Logout
